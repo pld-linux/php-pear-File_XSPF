@@ -5,7 +5,7 @@
 %define		_pearname	File_XSPF
 
 Summary:	%{_pearname} - manipulating XSPF playlists
-Summary(pl.UTF-8):   %{_pearname} - manipulowanie playlistami XSPF
+Summary(pl.UTF-8):	%{_pearname} - manipulowanie playlistami XSPF
 Name:		php-pear-%{_pearname}
 Version:	0.2.1
 Release:	1
@@ -39,7 +39,7 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
