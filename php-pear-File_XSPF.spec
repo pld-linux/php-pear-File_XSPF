@@ -3,18 +3,17 @@
 %define		_subclass	XSPF
 %define		_status		beta
 %define		_pearname	File_XSPF
-
 Summary:	%{_pearname} - manipulating XSPF playlists
 Summary(pl.UTF-8):	%{_pearname} - manipulowanie playlistami XSPF
 Name:		php-pear-%{_pearname}
 Version:	0.2.1
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	31a78f958089b4221d303a53f6156c53
 URL:		http://pear.php.net/package/File_XSPF/
-BuildRequires:	php-pear-PEAR
+BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.a1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-pear
@@ -42,8 +41,8 @@ Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-AutoReq:	no
 AutoProv:	no
+AutoReq:	no
 
 %description tests
 Tests for PEAR::%{_pearname}.
