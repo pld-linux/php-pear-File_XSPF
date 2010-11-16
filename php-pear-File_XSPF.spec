@@ -1,17 +1,15 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		File
-%define		_subclass	XSPF
 %define		_status		beta
 %define		_pearname	File_XSPF
 Summary:	%{_pearname} - manipulating XSPF playlists
 Summary(pl.UTF-8):	%{_pearname} - manipulowanie playlistami XSPF
 Name:		php-pear-%{_pearname}
-Version:	0.2.1
-Release:	3
+Version:	0.2.2
+Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	31a78f958089b4221d303a53f6156c53
+# Source0-md5:	d2956d070e7dd6b734a94478daa6c318
 URL:		http://pear.php.net/package/File_XSPF/
 BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.a1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -21,6 +19,7 @@ Requires:	php-pear-PEAR-core >= 1:1.4.0-0.a1
 Requires:	php-pear-Validate >= 0.6.2
 Requires:	php-pear-XML_Parser >= 1.2.7
 Requires:	php-pear-XML_Tree >= 1.1.0
+Obsoletes:	php-pear-File_XSPF-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,27 +35,18 @@ plików playlist w formacie XSPF.
 
 Ta klasa ma w PEAR status: %{_status}.
 
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-AutoProv:	no
-AutoReq:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
-
 %prep
 %pear_package_setup
+
+mv .%{php_pear_dir}/File/examples .
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %pear_package_install
+
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -67,3 +57,5 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/File/XSPF.php
 %{php_pear_dir}/File/XSPF
+
+%{_examplesdir}/%{name}-%{version}
