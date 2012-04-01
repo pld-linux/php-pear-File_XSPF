@@ -4,12 +4,12 @@
 Summary:	%{pearname} - manipulating XSPF playlists
 Summary(pl.UTF-8):	%{pearname} - manipulowanie playlistami XSPF
 Name:		php-pear-%{pearname}
-Version:	0.3.0
-Release:	2
+Version:	0.3.1
+Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
-# Source0-md5:	cbefeb407042d8b08cda9b0bcb112f22
+# Source0-md5:	35a9a3b41d4ead8dbda36c83fcc3cca1
 URL:		http://pear.php.net/package/File_XSPF/
 BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.a1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -37,13 +37,6 @@ Ta klasa ma w PEAR status: %{status}.
 
 %prep
 %pear_package_setup
-
-# https://pear.php.net/bugs/bug.php?id=19355
-test ! -f .%{php_pear_dir}/File/XSPF/Exception.php
-cat <<EOF > .%{php_pear_dir}/File/XSPF/Exception.php
-<?php
-class File_XSPF_Exception extends Exception {}
-EOF
 
 mv .%{php_pear_dir}/data/File_XSPF/README .
 mv docs/File_XSPF/examples .
