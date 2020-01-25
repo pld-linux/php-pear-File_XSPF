@@ -1,6 +1,5 @@
 %define		status		beta
 %define		pearname	File_XSPF
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - manipulating XSPF playlists
 Summary(pl.UTF-8):	%{pearname} - manipulowanie playlistami XSPF
 Name:		php-pear-%{pearname}
