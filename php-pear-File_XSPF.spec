@@ -4,7 +4,7 @@ Summary:	%{pearname} - manipulating XSPF playlists
 Summary(pl.UTF-8):	%{pearname} - manipulowanie playlistami XSPF
 Name:		php-pear-%{pearname}
 Version:	0.3.1
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
